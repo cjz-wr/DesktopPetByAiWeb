@@ -1,0 +1,135 @@
+<section id="features" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block px-6 py-2 bg-primary-50 text-primary-600 rounded-full text-lg font-medium mb-6 shadow-soft">核心功能</span>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">功能模块详解</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">深入了解DesktopPetByAi的各项核心功能模块</p>
+        </div>
+        
+        <div class="max-w-6xl mx-auto mb-20">
+            <!-- 交互界面模块 -->
+            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-medium p-8 mb-12 border border-gray-100">
+                <div class="flex flex-col md:flex-row items-start mb-8">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-xl flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0">
+                        <i class="fa fa-window-maximize text-secondary-600 text-3xl"></i>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl md:text-3xl font-semibold">交互界面（settingwindow.py）</h3>
+                        <p class="text-gray-600 mt-2">基于Qt框架的图形化交互界面</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-6 text-secondary-700">主要功能</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-600"><strong>聊天界面</strong>：基于Qt框架的QWidget实现，包含聊天历史显示区和输入区</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-600"><strong>界面样式</strong>：通过CSS样式表定义组件外观，支持用户输入提示</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-600"><strong>消息区分</strong>：用户消息为蓝色，AI消息为红色，清晰区分对话角色</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold mb-6 text-secondary-700">核心逻辑</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa fa-cogs text-secondary-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-600">加载历史对话（从ai_memory读取）并显示</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-cogs text-secondary-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-600">处理发送/清空消息操作，发送时禁用按钮防止重复提交</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-cogs text-secondary-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-600">通过工作线程（AIWorker）异步调用AI接口，避免界面卡顿</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-cogs text-secondary-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-600">接收AI回复后更新聊天记录、触发语音播放，并通知主窗口刷新宠物动画</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 其他模块 -->
+        <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <!-- AI交互模块 -->
+            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-soft p-8 border border-gray-100 card-hover text-center transform transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
+                <div class="w-20 h-20 bg-teal-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fa fa-robot text-teal-600 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-5">AI交互模块</h3>
+                <div class="space-y-4 text-left">
+                    <div class="flex items-start">
+                        <i class="fa fa-database text-teal-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>对话管理</strong>：负责加载/保存对话历史，维护ai_memory中的对话数据</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-plug text-teal-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>智谱AI接口</strong>：对接智谱AI开放平台，发送用户消息并获取AI回复</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-code text-teal-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>专用模块</strong>：zhipu_12306.py专门处理与车票查询相关的AI指令解析</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 文本转语音模块 -->
+            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-soft p-8 border border-gray-100 card-hover text-center transform transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
+                <div class="w-20 h-20 bg-purple-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fa fa-volume-up text-purple-600 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-5">文本转语音（toVoice.py）</h3>
+                <div class="space-y-4 text-left">
+                    <div class="flex items-start">
+                        <i class="fa fa-sync-alt text-purple-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>功能实现</strong>：使用edge_tts库将文本转换为语音，生成临时MP3文件</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-play-circle text-purple-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>语音播放</strong>：通过pygame库播放生成的音频文件，播放完成后自动删除临时文件</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-exclamation-triangle text-purple-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>异常处理</strong>：播放出错时尝试删除临时文件，避免资源残留</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 扩展工具模块 -->
+            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-soft p-8 border border-gray-100 card-hover text-center transform transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
+                <div class="w-20 h-20 bg-orange-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                    <i class="fa fa-tools text-orange-600 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-5">扩展工具模块</h3>
+                <div class="space-y-4 text-left">
+                    <div class="flex items-start">
+                        <i class="fa fa-train text-orange-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>12306车票查询</strong>：提供get_tickets方法，查询车票信息并返回文本结果</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-map-marker text-orange-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>逆地理编码</strong>：通过regeocode方法将经纬度坐标转换为具体地址</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa fa-external-link-alt text-orange-500 mt-1 mr-3"></i>
+                        <span class="text-gray-600"><strong>外部接口</strong>：依赖外部API接口实现地理信息解析等高级功能</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

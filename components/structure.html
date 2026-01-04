@@ -1,0 +1,166 @@
+<section id="structure" class="py-20 gradient-bg-light">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block px-6 py-2 bg-primary-50 text-primary-600 rounded-full text-lg font-medium mb-6 shadow-soft">项目结构</span>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">文件结构</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">清晰的项目目录结构，便于理解和使用</p>
+        </div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- 根目录文件 -->
+                <div class="bg-white rounded-2xl shadow-medium p-6 md:p-8 h-full">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fa fa-folder-open text-secondary-600 mr-3"></i>
+                        根目录文件
+                    </h3>
+                    
+                    <div class="space-y-4 max-h-96 overflow-y-auto pr-2">
+                        <div class="directory-tree bg-gray-50 p-5 rounded-xl border border-gray-200">
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">DesktopPetByAiInstall.iss</span>
+                                <span class="file-badge bg-blue-100 text-blue-800">安装配置</span>
+                                <div class="text-gray-600 text-sm mt-1">安装程序配置文件，用于生成项目的安装包</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">LICENSE</span>
+                                <span class="file-badge bg-gray-100 text-gray-800">许可证</span>
+                                <div class="text-gray-600 text-sm mt-1">开源许可证文件，规定项目的授权范围</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">README.md</span>
+                                <span class="file-badge bg-green-100 text-green-800">文档</span>
+                                <div class="text-gray-600 text-sm mt-1">项目说明文档，包含使用前的准备工作</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">main.py</span>
+                                <span class="file-badge bg-red-100 text-red-800">入口文件</span>
+                                <div class="text-gray-600 text-sm mt-1">项目主程序入口，负责统筹各模块运行</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">main.spec</span>
+                                <span class="file-badge bg-yellow-100 text-yellow-800">打包配置</span>
+                                <div class="text-gray-600 text-sm mt-1">程序打包配置文件（用于PyInstaller）</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">mcp_12306_client.py</span>
+                                <span class="file-badge bg-purple-100 text-purple-800">工具模块</span>
+                                <div class="text-gray-600 text-sm mt-1">12306车票查询工具模块</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">settingwindow.py</span>
+                                <span class="file-badge bg-indigo-100 text-indigo-800">界面模块</span>
+                                <div class="text-gray-600 text-sm mt-1">设置与聊天界面模块，实现图形化交互界面</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">toVoice.py</span>
+                                <span class="file-badge bg-pink-100 text-pink-800">语音模块</span>
+                                <div class="text-gray-600 text-sm mt-1">文本转语音模块，将AI回复转换为语音</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">zhipu.py</span>
+                                <span class="file-badge bg-teal-100 text-teal-800">AI模块</span>
+                                <div class="text-gray-600 text-sm mt-1">与智谱AI接口交互的核心模块</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">zhipu_12306.py</span>
+                                <span class="file-badge bg-teal-100 text-teal-800">AI工具</span>
+                                <div class="text-gray-600 text-sm mt-1">专门处理与12306相关的AI交互</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 子文件夹 -->
+                <div class="bg-white rounded-2xl shadow-medium p-6 md:p-8 h-full">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fa fa-folder text-primary-600 mr-3"></i>
+                        子文件夹
+                    </h3>
+                    
+                    <div class="space-y-4 max-h-96 overflow-y-auto pr-2">
+                        <div class="directory-tree bg-gray-50 p-5 rounded-xl border border-gray-200">
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">gif/</span>
+                                <span class="file-badge bg-blue-100 text-blue-800">动画资源</span>
+                                <div class="text-gray-600 text-sm mt-1">存储桌面宠物的动态表情资源</div>
+                                <div class="ml-4 mt-2">
+                                    <div class="directory-item mb-2">
+                                        <span>1.gif, 2.gif, ICAT.gif</span>
+                                        <div class="text-gray-500 text-sm">基础动画</div>
+                                    </div>
+                                    <div class="directory-item">
+                                        <span>蜡笔小新组/</span>
+                                        <div class="text-gray-500 text-sm">角色专属动画</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">img/</span>
+                                <span class="file-badge bg-green-100 text-green-800">图片资源</span>
+                                <div class="text-gray-600 text-sm mt-1">静态图片资源文件夹，存放桌面宠物的图标、界面元素图片等</div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">ai_memory/</span>
+                                <span class="file-badge bg-red-100 text-red-800">数据存储</span>
+                                <div class="text-gray-600 text-sm mt-1">AI记忆数据存储目录</div>
+                                <div class="ml-4 mt-2">
+                                    <div class="directory-item">
+                                        <span>memory_default.json</span>
+                                        <div class="text-gray-500 text-sm">记录默认对话历史</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">ico/</span>
+                                <span class="file-badge bg-yellow-100 text-yellow-800">图标资源</span>
+                                <div class="text-gray-600 text-sm mt-1">图标资源文件夹</div>
+                                <div class="ml-4 mt-2">
+                                    <div class="directory-item">
+                                        <span>ico.png</span>
+                                        <div class="text-gray-500 text-sm">程序在系统托盘、桌面快捷方式的图标</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                <span class="font-medium">background/</span>
+                                <span class="file-badge bg-purple-100 text-purple-800">背景资源</span>
+                                <div class="text-gray-600 text-sm mt-1">背景资源文件夹</div>
+                                <div class="ml-4 mt-2">
+                                    <div class="directory-item">
+                                        <span>background.png</span>
+                                        <div class="text-gray-500 text-sm">用于设置界面或桌面宠物的背景图片</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 注意事项 -->
+            <div class="mt-12 bg-gradient-to-r from-red-50 to-white border border-red-100 rounded-2xl p-8">
+                <div class="flex items-start">
+                    <i class="fa fa-exclamation-circle text-red-500 text-2xl mt-1 mr-4"></i>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-3 text-red-700">重要注意事项</h4>
+                        <ul class="text-gray-700 space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa fa-caret-right text-red-500 mt-1 mr-2"></i>
+                                <span>AI对话历史存储在<code class="bg-red-100 text-red-800 px-2 py-1 rounded">ai_memory/memory_default.json</code>，删除该文件可清除记忆</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-caret-right text-red-500 mt-1 mr-2"></i>
+                                <span>不可删除<code class="bg-red-100 text-red-800 px-2 py-1 rounded">ai_memory</code>文件夹本身，否则可能导致程序异常</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-caret-right text-red-500 mt-1 mr-2"></i>
+                                <span>项目为测试版，可能存在功能缺陷，发现问题请及时反馈</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
