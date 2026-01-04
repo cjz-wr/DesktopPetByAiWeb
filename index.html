@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DesktopPetByAi - 智能桌面宠物助手</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 外部CSS文件 -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 外部库 -->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -18,7 +25,7 @@
                             200: '#bae4ba',
                             300: '#8cd08c',
                             400: '#5ab35a',
-                            500: '#4CAF50', // 主色
+                            500: '#4CAF50',
                             600: '#3d9c41',
                             700: '#338336',
                             800: '#2d682f',
@@ -88,194 +95,6 @@
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer base {
-            html {
-                scroll-behavior: smooth;
-                scroll-padding-top: 80px;
-            }
-            
-            body {
-                background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-                overflow-x: hidden;
-            }
-            
-            ::selection {
-                background-color: rgba(76, 175, 80, 0.3);
-                color: #1f2937;
-            }
-        }
-        
-        @layer utilities {
-            .text-shadow {
-                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            }
-            
-            .text-gradient {
-                background: linear-gradient(90deg, #4CAF50, #1a73e8);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            
-            .glass-effect {
-                background: rgba(255, 255, 255, 0.7);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-            
-            .card-hover {
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-            
-            .card-hover:hover {
-                transform: translateY(-10px) scale(1.02);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            }
-            
-            .gradient-bg {
-                background: linear-gradient(135deg, #4CAF50 0%, #1a73e8 50%, #ea4335 100%);
-                background-size: 200% 200%;
-                animation: gradientX 15s ease infinite;
-            }
-            
-            .gradient-bg-light {
-                background: linear-gradient(135deg, #f0f9f0 0%, #eff6ff 50%, #fef2f2 100%);
-            }
-            
-            .section-divider {
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.3), transparent);
-                margin: 4rem auto;
-                max-width: 800px;
-            }
-            
-            .feature-icon {
-                position: relative;
-                z-index: 1;
-            }
-            
-            .feature-icon::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 70px;
-                height: 70px;
-                background: rgba(76, 175, 80, 0.1);
-                border-radius: 50%;
-                z-index: -1;
-            }
-            
-            .staggered-animation > * {
-                opacity: 0;
-                animation: fadeIn 0.8s ease-out forwards;
-            }
-            
-            .staggered-animation > *:nth-child(1) { animation-delay: 0.1s; }
-            .staggered-animation > *:nth-child(2) { animation-delay: 0.2s; }
-            .staggered-animation > *:nth-child(3) { animation-delay: 0.3s; }
-            .staggered-animation > *:nth-child(4) { animation-delay: 0.4s; }
-            .staggered-animation > *:nth-child(5) { animation-delay: 0.5s; }
-            .staggered-animation > *:nth-child(6) { animation-delay: 0.6s; }
-            
-            .scroll-indicator {
-                width: 30px;
-                height: 50px;
-                border: 2px solid rgba(255, 255, 255, 0.7);
-                border-radius: 25px;
-                position: relative;
-                margin: 0 auto;
-            }
-            
-            .scroll-indicator::after {
-                content: '';
-                position: absolute;
-                top: 10px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 4px;
-                height: 10px;
-                background-color: rgba(255, 255, 255, 0.7);
-                border-radius: 2px;
-                animation: scrollAnimation 2s infinite;
-            }
-            
-            @keyframes scrollAnimation {
-                0% { top: 10px; opacity: 1; }
-                100% { top: 30px; opacity: 0; }
-            }
-            
-            .typewriter {
-                overflow: hidden;
-                border-right: 2px solid #4CAF50;
-                white-space: nowrap;
-                margin: 0 auto;
-                animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-            }
-            
-            @keyframes typing {
-                from { width: 0 }
-                to { width: 100% }
-            }
-            
-            @keyframes blink-caret {
-                from, to { border-color: transparent }
-                50% { border-color: #4CAF50; }
-            }
-            
-            .chat-bubble {
-                position: relative;
-                background: #f1f5f9;
-                border-radius: 1rem;
-                padding: 1rem;
-                max-width: 80%;
-                margin: 1rem 0;
-            }
-            
-            .chat-bubble::after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 20px;
-                border-width: 10px 10px 0;
-                border-style: solid;
-                border-color: #f1f5f9 transparent;
-            }
-            
-            .directory-tree {
-                font-family: 'Courier New', monospace;
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-            
-            .directory-item {
-                padding-left: 1.5rem;
-                position: relative;
-            }
-            
-            .directory-item::before {
-                content: '├── ';
-                position: absolute;
-                left: 0;
-                color: #6b7280;
-            }
-            
-            .directory-item:last-child::before {
-                content: '└── ';
-            }
-            
-            .file-badge {
-                display: inline-block;
-                padding: 0.15rem 0.5rem;
-                border-radius: 0.25rem;
-                font-size: 0.75rem;
-                font-weight: 600;
-                margin-left: 0.5rem;
-            }
-        }
-    </style>
 </head>
 <body class="text-dark font-sans">
 
@@ -300,6 +119,10 @@
                 </a>
                 <a href="#features" class="text-gray-700 hover:text-primary-500 transition-all duration-300 relative group">
                     功能模块
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#demo" class="text-gray-700 hover:text-primary-500 transition-all duration-300 relative group">
+                    产品演示
                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
                 </a>
                 <a href="#installation" class="text-gray-700 hover:text-primary-500 transition-all duration-300 relative group">
@@ -330,6 +153,7 @@
                 <a href="#overview" class="block py-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 border-b border-gray-100 pb-2">项目概述</a>
                 <a href="#structure" class="block py-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 border-b border-gray-100 pb-2">文件结构</a>
                 <a href="#features" class="block py-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 border-b border-gray-100 pb-2">功能模块</a>
+                <a href="#demo" class="block py-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 border-b border-gray-100 pb-2">产品演示</a>
                 <a href="#installation" class="block py-2 text-gray-700 hover:text-primary-500 transition-colors duration-300 border-b border-gray-100 pb-2">安装指南</a>
                 <a href="#contribute" class="block py-2 text-gray-700 hover:text-primary-500 transition-colors duration-300">贡献指南</a>
             </div>
@@ -348,14 +172,14 @@
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 text-shadow animate-fade-in">DesktopPetByAi</h1>
                 <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-95 animate-slide-up text-white/90" style="animation-delay: 0.2s;">
-                    智能桌面宠物项目 - 交互式桌面陪伴，支持对话交流与实用工具集成
+                    集AI交互、桌面任务助手与个性化宠物形象于一体的开源桌面应用
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-6 animate-slide-up mt-12" style="animation-delay: 0.4s;">
                     <a href="install.html" class="glass-effect bg-white text-primary-500 px-8 py-5 rounded-xl font-medium hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-soft flex items-center justify-center text-lg font-semibold">
                         <i class="fa fa-download mr-3 text-xl"></i> 立即下载
                     </a>
-                    <a href="#installation" class="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-5 rounded-xl font-medium hover:bg-white/30 transition-all duration-300 transform hover:scale-105 shadow-soft text-lg font-semibold">
-                        了解详情
+                    <a href="#demo" class="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-5 rounded-xl font-medium hover:bg-white/30 transition-all duration-300 transform hover:scale-105 shadow-soft text-lg font-semibold">
+                        查看演示
                     </a>
                 </div>
                 
@@ -367,9 +191,9 @@
                         <div class="mt-2 text-xs opacity-80">包含MCP功能和AI增强</div>
                     </div>
                     <div class="bg-white/20 p-5 rounded-xl backdrop-blur-sm max-w-xs w-full">
-                        <div class="text-2xl font-bold">持续更新</div>
-                        <div class="text-sm opacity-90 mt-1">功能扩展中</div>
-                        <div class="mt-2 text-xs opacity-80">支持更多实用工具</div>
+                        <div class="text-2xl font-bold">模块化</div>
+                        <div class="text-sm opacity-90 mt-1">易于扩展</div>
+                        <div class="mt-2 text-xs opacity-80">支持自定义工具开发</div>
                     </div>
                 </div>
             </div>
@@ -382,7 +206,7 @@
             <div class="text-center mb-16">
                 <span class="inline-block px-6 py-2 bg-primary-50 text-primary-600 rounded-full text-lg font-medium mb-6 shadow-soft">项目介绍</span>
                 <h2 class="text-3xl md:text-5xl font-bold mb-6">项目概述</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto text-lg">DesktopPetByAi 是一个智能桌面宠物项目，提供交互式桌面陪伴功能</p>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">DesktopPetByAi 是一款集AI交互、桌面任务助手与个性化宠物形象于一体的开源桌面应用</p>
             </div>
             
             <div class="max-w-6xl mx-auto">
@@ -394,14 +218,14 @@
                         </h3>
                         <div class="space-y-6">
                             <p class="text-gray-600 text-lg leading-relaxed">
-                                DesktopPetByAi 的核心定位是提供交互式桌面陪伴功能，支持与用户对话交流、协助执行简单操作（如打开软件），并集成了车票查询、地理编码等扩展工具。
+                                DesktopPetByAi 通过拟人化的桌面宠物界面，实现自然语言对话、实用工具调用（如网络搜索、软件控制）等功能，为用户提供便捷且有趣的桌面交互体验。
                             </p>
                             <div class="bg-blue-50 border border-blue-100 rounded-xl p-5 mt-4">
                                 <div class="flex items-start">
                                     <i class="fa fa-exclamation-triangle text-blue-500 text-xl mt-1 mr-3"></i>
                                     <div>
                                         <p class="font-medium text-blue-800">项目状态</p>
-                                        <p class="text-blue-700 mt-1">项目目前处于测试阶段，功能可扩展性较强，用户可通过探索挖掘更多用途。</p>
+                                        <p class="text-blue-700 mt-1">项目支持功能扩展，用户可通过二次开发添加自定义工具或交互逻辑，目前处于测试阶段。</p>
                                     </div>
                                 </div>
                             </div>
@@ -417,27 +241,27 @@
                             <ul class="space-y-4">
                                 <li class="flex items-start">
                                     <i class="fa fa-check-circle text-primary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600 text-lg">智能对话交流，支持自然语言交互</span>
+                                    <span class="text-gray-600 text-lg">智能对话交流，支持与智谱AI进行自然语言交互</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa fa-check-circle text-primary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600 text-lg">桌面宠物形态，可自定义动画和外观</span>
+                                    <span class="text-gray-600 text-lg">AI密钥管理机制，支持配置和保存API Key</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa fa-check-circle text-primary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600 text-lg">文本转语音功能，AI回复可语音播放</span>
+                                    <span class="text-gray-600 text-lg">对话记忆系统，上下文关联存储在本地文件中</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa fa-check-circle text-primary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600 text-lg">集成12306车票查询、地理编码等实用工具</span>
+                                    <span class="text-gray-600 text-lg">集成多种实用工具：网络搜索、地理编码、12306票务查询</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa fa-check-circle text-primary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600 text-lg">模块化设计，便于功能扩展和定制</span>
+                                    <span class="text-gray-600 text-lg">模块化设计，便于功能扩展和定制，支持自定义工具开发</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fa fa-download text-primary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600 text-lg">提供EXE安装包，一键安装使用</span>
+                                    <i class="fa fa-check-circle text-primary-500 mt-1 mr-3 text-lg"></i>
+                                    <span class="text-gray-600 text-lg">提供EXE安装包和源码两种使用方式</span>
                                 </li>
                             </ul>
                         </div>
@@ -453,7 +277,7 @@
                                 <i class="fa fa-window-restore text-blue-600 text-2xl"></i>
                             </div>
                             <p class="font-semibold text-lg">GUI界面</p>
-                            <p class="text-sm text-gray-500 mt-2">PyQt5/PySide</p>
+                            <p class="text-sm text-gray-500 mt-2">PyQt6</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-gray-200 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
                             <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
@@ -464,17 +288,17 @@
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-gray-200 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
                             <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                                <i class="fa fa-volume-up text-purple-600 text-2xl"></i>
+                                <i class="fa fa-cogs text-purple-600 text-2xl"></i>
                             </div>
-                            <p class="font-semibold text-lg">语音合成</p>
-                            <p class="text-sm text-gray-500 mt-2">Edge TTS</p>
+                            <p class="font-semibold text-lg">工具集成</p>
+                            <p class="text-sm text-gray-500 mt-2">网络搜索/地理编码</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl border border-gray-200 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
                             <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
                                 <i class="fa fa-tools text-orange-600 text-2xl"></i>
                             </div>
-                            <p class="font-semibold text-lg">扩展工具</p>
-                            <p class="text-sm text-gray-500 mt-2">12306/地理编码</p>
+                            <p class="font-semibold text-lg">模块化架构</p>
+                            <p class="text-sm text-gray-500 mt-2">易于扩展开发</p>
                         </div>
                     </div>
                 </div>
@@ -493,24 +317,34 @@
             
             <div class="max-w-6xl mx-auto">
                 <div class="grid md:grid-cols-2 gap-12">
-                    <!-- 根目录文件 -->
+                    <!-- 核心文件 -->
                     <div class="bg-white rounded-2xl shadow-medium p-6 md:p-8 h-full">
                         <h3 class="text-2xl font-semibold mb-6 flex items-center">
-                            <i class="fa fa-folder-open text-secondary-600 mr-3"></i>
-                            根目录文件
+                            <i class="fa fa-file-code text-secondary-600 mr-3"></i>
+                            核心文件
                         </h3>
                         
                         <div class="space-y-4 max-h-96 overflow-y-auto pr-2">
                             <div class="directory-tree bg-gray-50 p-5 rounded-xl border border-gray-200">
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">DesktopPetByAiInstall.iss</span>
-                                    <span class="file-badge bg-blue-100 text-blue-800">安装配置</span>
-                                    <div class="text-gray-600 text-sm mt-1">安装程序配置文件，用于生成项目的安装包</div>
+                                    <span class="font-medium">main.py</span>
+                                    <span class="file-badge bg-red-100 text-red-800">入口文件</span>
+                                    <div class="text-gray-600 text-sm mt-1">程序入口，负责初始化GUI与核心逻辑</div>
                                 </div>
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">LICENSE</span>
-                                    <span class="file-badge bg-gray-100 text-gray-800">许可证</span>
-                                    <div class="text-gray-600 text-sm mt-1">开源许可证文件，规定项目的授权范围</div>
+                                    <span class="font-medium">settingwindow.py</span>
+                                    <span class="file-badge bg-indigo-100 text-indigo-800">界面模块</span>
+                                    <div class="text-gray-600 text-sm mt-1">设置窗口界面及逻辑，支持配置AI Key、默认工具等</div>
+                                </div>
+                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                    <span class="font-medium">zhipu.py</span>
+                                    <span class="file-badge bg-teal-100 text-teal-800">AI模块</span>
+                                    <div class="text-gray-600 text-sm mt-1">智谱AI接口封装，实现AI对话功能</div>
+                                </div>
+                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                    <span class="font-medium">demo_setting.json</span>
+                                    <span class="file-badge bg-gray-100 text-gray-800">配置文件</span>
+                                    <div class="text-gray-600 text-sm mt-1">全局配置文件，存储AI Key等设置</div>
                                 </div>
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
                                     <span class="font-medium">README.md</span>
@@ -518,77 +352,53 @@
                                     <div class="text-gray-600 text-sm mt-1">项目说明文档，包含使用前的准备工作</div>
                                 </div>
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">main.py</span>
-                                    <span class="file-badge bg-red-100 text-red-800">入口文件</span>
-                                    <div class="text-gray-600 text-sm mt-1">项目主程序入口，负责统筹各模块运行</div>
-                                </div>
-                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">main.spec</span>
-                                    <span class="file-badge bg-yellow-100 text-yellow-800">打包配置</span>
-                                    <div class="text-gray-600 text-sm mt-1">程序打包配置文件（用于PyInstaller）</div>
-                                </div>
-                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">mcp_12306_client.py</span>
-                                    <span class="file-badge bg-purple-100 text-purple-800">工具模块</span>
-                                    <div class="text-gray-600 text-sm mt-1">12306车票查询工具模块</div>
-                                </div>
-                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">settingwindow.py</span>
-                                    <span class="file-badge bg-indigo-100 text-indigo-800">界面模块</span>
-                                    <div class="text-gray-600 text-sm mt-1">设置与聊天界面模块，实现图形化交互界面</div>
-                                </div>
-                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">toVoice.py</span>
-                                    <span class="file-badge bg-pink-100 text-pink-800">语音模块</span>
-                                    <div class="text-gray-600 text-sm mt-1">文本转语音模块，将AI回复转换为语音</div>
-                                </div>
-                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">zhipu.py</span>
-                                    <span class="file-badge bg-teal-100 text-teal-800">AI模块</span>
-                                    <div class="text-gray-600 text-sm mt-1">与智谱AI接口交互的核心模块</div>
-                                </div>
-                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">zhipu_12306.py</span>
-                                    <span class="file-badge bg-teal-100 text-teal-800">AI工具</span>
-                                    <div class="text-gray-600 text-sm mt-1">专门处理与12306相关的AI交互</div>
+                                    <span class="font-medium">DesktopPetByAiInstall.iss</span>
+                                    <span class="file-badge bg-blue-100 text-blue-800">安装配置</span>
+                                    <div class="text-gray-600 text-sm mt-1">安装程序配置文件，用于生成项目的安装包</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- 子文件夹 -->
+                    <!-- 主要目录 -->
                     <div class="bg-white rounded-2xl shadow-medium p-6 md:p-8 h-full">
                         <h3 class="text-2xl font-semibold mb-6 flex items-center">
                             <i class="fa fa-folder text-primary-600 mr-3"></i>
-                            子文件夹
+                            主要目录
                         </h3>
                         
                         <div class="space-y-4 max-h-96 overflow-y-auto pr-2">
                             <div class="directory-tree bg-gray-50 p-5 rounded-xl border border-gray-200">
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">gif/</span>
-                                    <span class="file-badge bg-blue-100 text-blue-800">动画资源</span>
-                                    <div class="text-gray-600 text-sm mt-1">存储桌面宠物的动态表情资源</div>
+                                    <span class="font-medium">demo/</span>
+                                    <span class="file-badge bg-orange-100 text-orange-800">工具示例</span>
+                                    <div class="text-gray-600 text-sm mt-1">包含各种工具示例：12306、Bing搜索等</div>
                                     <div class="ml-4 mt-2">
                                         <div class="directory-item mb-2">
-                                            <span>1.gif, 2.gif, ICAT.gif</span>
-                                            <div class="text-gray-500 text-sm">基础动画</div>
+                                            <span>bingsearch_mcp.py</span>
+                                            <div class="text-gray-500 text-sm">Bing搜索工具</div>
                                         </div>
                                         <div class="directory-item">
-                                            <span>蜡笔小新组/</span>
-                                            <div class="text-gray-500 text-sm">角色专属动画</div>
+                                            <span>mcpdemo_12306.py</span>
+                                            <div class="text-gray-500 text-sm">12306票务工具</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">img/</span>
-                                    <span class="file-badge bg-green-100 text-green-800">图片资源</span>
-                                    <div class="text-gray-600 text-sm mt-1">静态图片资源文件夹，存放桌面宠物的图标、界面元素图片等</div>
+                                    <span class="font-medium">lib/</span>
+                                    <span class="file-badge bg-purple-100 text-purple-800">基础组件</span>
+                                    <div class="text-gray-600 text-sm mt-1">基础组件目录，包含垂直标签、配置管理等</div>
+                                    <div class="ml-4 mt-2">
+                                        <div class="directory-item">
+                                            <span>vertical_tab_widget.py</span>
+                                            <div class="text-gray-500 text-sm">AI Key管理核心代码</div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
                                     <span class="font-medium">ai_memory/</span>
                                     <span class="file-badge bg-red-100 text-red-800">数据存储</span>
-                                    <div class="text-gray-600 text-sm mt-1">AI记忆数据存储目录</div>
+                                    <div class="text-gray-600 text-sm mt-1">AI记忆数据存储目录，存储对话历史</div>
                                     <div class="ml-4 mt-2">
                                         <div class="directory-item">
                                             <span>memory_default.json</span>
@@ -597,26 +407,19 @@
                                     </div>
                                 </div>
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">ico/</span>
-                                    <span class="file-badge bg-yellow-100 text-yellow-800">图标资源</span>
-                                    <div class="text-gray-600 text-sm mt-1">图标资源文件夹</div>
-                                    <div class="ml-4 mt-2">
-                                        <div class="directory-item">
-                                            <span>ico.png</span>
-                                            <div class="text-gray-500 text-sm">程序在系统托盘、桌面快捷方式的图标</div>
-                                        </div>
-                                    </div>
+                                    <span class="font-medium">gif/</span>
+                                    <span class="file-badge bg-blue-100 text-blue-800">动画资源</span>
+                                    <div class="text-gray-600 text-sm mt-1">存储桌面宠物的动态表情资源</div>
                                 </div>
                                 <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <span class="font-medium">background/</span>
-                                    <span class="file-badge bg-purple-100 text-purple-800">背景资源</span>
-                                    <div class="text-gray-600 text-sm mt-1">背景资源文件夹</div>
-                                    <div class="ml-4 mt-2">
-                                        <div class="directory-item">
-                                            <span>background.png</span>
-                                            <div class="text-gray-500 text-sm">用于设置界面或桌面宠物的背景图片</div>
-                                        </div>
-                                    </div>
+                                    <span class="font-medium">img/</span>
+                                    <span class="file-badge bg-green-100 text-green-800">图片资源</span>
+                                    <div class="text-gray-600 text-sm mt-1">静态图片资源文件夹</div>
+                                </div>
+                                <div class="directory-item mb-3 pb-3 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
+                                    <span class="font-medium">example/</span>
+                                    <span class="file-badge bg-yellow-100 text-yellow-800">示例代码</span>
+                                    <div class="text-gray-600 text-sm mt-1">功能集成示例，如菜单栏等</div>
                                 </div>
                             </div>
                         </div>
@@ -632,15 +435,19 @@
                             <ul class="text-gray-700 space-y-3">
                                 <li class="flex items-start">
                                     <i class="fa fa-caret-right text-red-500 mt-1 mr-2"></i>
-                                    <span>AI对话历史存储在<code class="bg-red-100 text-red-800 px-2 py-1 rounded">ai_memory/memory_default.json</code>，删除该文件可清除记忆</span>
+                                    <span>AI对话历史存储在<code class="bg-red-100 text-red-800 px-2 py-1 rounded">ai_memory/</code>目录下的JSON文件中，删除该文件可清除记忆</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa fa-caret-right text-red-500 mt-1 mr-2"></i>
-                                    <span>不可删除<code class="bg-red-100 text-red-800 px-2 py-1 rounded">ai_memory</code>文件夹本身，否则可能导致程序异常</span>
+                                    <span>不可删除<code class="bg-red-100 text-red-800 px-2 py-1 rounded">demo_setting.json</code>配置文件，否则可能导致程序无法启动</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa fa-caret-right text-red-500 mt-1 mr-2"></i>
-                                    <span>项目为测试版，可能存在功能缺陷，发现问题请及时反馈</span>
+                                    <span>保存AI Key时需确保程序对当前目录有写入权限，否则会提示保存失败</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-caret-right text-red-500 mt-1 mr-2"></i>
+                                    <span>项目为测试版，可能存在接口调用不稳定、功能冲突等问题，建议通过Issues反馈</span>
                                 </li>
                             </ul>
                         </div>
@@ -660,55 +467,51 @@
             </div>
             
             <div class="max-w-6xl mx-auto mb-20">
-                <!-- 交互界面模块 -->
+                <!-- AI交互系统 -->
                 <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-medium p-8 mb-12 border border-gray-100">
                     <div class="flex flex-col md:flex-row items-start mb-8">
-                        <div class="w-16 h-16 bg-secondary-100 rounded-xl flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0">
-                            <i class="fa fa-window-maximize text-secondary-600 text-3xl"></i>
+                        <div class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0">
+                            <i class="fa fa-robot text-teal-600 text-3xl"></i>
                         </div>
                         <div class="text-center md:text-left">
-                            <h3 class="text-2xl md:text-3xl font-semibold">交互界面（settingwindow.py）</h3>
-                            <p class="text-gray-600 mt-2">基于Qt框架的图形化交互界面</p>
+                            <h3 class="text-2xl md:text-3xl font-semibold">AI交互系统</h3>
+                            <p class="text-gray-600 mt-2">智谱AI接口集成与密钥管理机制</p>
                         </div>
                     </div>
                     
                     <div class="grid md:grid-cols-2 gap-10">
                         <div>
-                            <h4 class="text-xl font-semibold mb-6 text-secondary-700">主要功能</h4>
+                            <h4 class="text-xl font-semibold mb-6 text-teal-700">AI密钥管理</h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start">
-                                    <i class="fa fa-check-circle text-secondary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600"><strong>聊天界面</strong>：基于Qt框架的QWidget实现，包含聊天历史显示区和输入区</span>
+                                    <i class="fa fa-key text-teal-500 mt-1 mr-3 text-lg"></i>
+                                    <span class="text-gray-600"><strong>配置管理</strong>：通过<code>lib/vertical_tab_widget.py</code>中的<code>save_ai_key</code>函数管理API Key</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fa fa-check-circle text-secondary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600"><strong>界面样式</strong>：通过CSS样式表定义组件外观，支持用户输入提示</span>
+                                    <i class="fa fa-check text-teal-500 mt-1 mr-3 text-lg"></i>
+                                    <span class="text-gray-600"><strong>输入验证</strong>：检查用户输入的AI Key是否为空，为空则弹出警告提示</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fa fa-check-circle text-secondary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600"><strong>消息区分</strong>：用户消息为蓝色，AI消息为红色，清晰区分对话角色</span>
+                                    <i class="fa fa-save text-teal-500 mt-1 mr-3 text-lg"></i>
+                                    <span class="text-gray-600"><strong>持久化存储</strong>：将配置写入<code>demo_setting.json</code>文件，确保重启后生效</span>
                                 </li>
                             </ul>
                         </div>
                         
                         <div>
-                            <h4 class="text-xl font-semibold mb-6 text-secondary-700">核心逻辑</h4>
+                            <h4 class="text-xl font-semibold mb-6 text-teal-700">对话与记忆系统</h4>
                             <ul class="space-y-4">
                                 <li class="flex items-start">
-                                    <i class="fa fa-cogs text-secondary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600">加载历史对话（从ai_memory读取）并显示</span>
+                                    <i class="fa fa-comments text-teal-500 mt-1 mr-3 text-lg"></i>
+                                    <span class="text-gray-600">通过<code>zhipu.py</code>封装智谱AI接口，支持自然语言交互</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fa fa-cogs text-secondary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600">处理发送/清空消息操作，发送时禁用按钮防止重复提交</span>
+                                    <i class="fa fa-history text-teal-500 mt-1 mr-3 text-lg"></i>
+                                    <span class="text-gray-600">AI对话历史存储在<code>ai_memory/</code>目录下，实现上下文关联</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fa fa-cogs text-secondary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600">通过工作线程（AIWorker）异步调用AI接口，避免界面卡顿</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fa fa-cogs text-secondary-500 mt-1 mr-3 text-lg"></i>
-                                    <span class="text-gray-600">接收AI回复后更新聊天记录、触发语音播放，并通知主窗口刷新宠物动画</span>
+                                    <i class="fa fa-trash text-teal-500 mt-1 mr-3 text-lg"></i>
+                                    <span class="text-gray-600">重置记忆需删除<code>ai_memory/</code>下的JSON文件（不可删除目录本身）</span>
                                 </li>
                             </ul>
                         </div>
@@ -718,74 +521,280 @@
             
             <!-- 其他模块 -->
             <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                <!-- AI交互模块 -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-soft p-8 border border-gray-100 card-hover text-center transform transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
-                    <div class="w-20 h-20 bg-teal-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fa fa-robot text-teal-600 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-5">AI交互模块</h3>
-                    <div class="space-y-4 text-left">
-                        <div class="flex items-start">
-                            <i class="fa fa-database text-teal-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>对话管理</strong>：负责加载/保存对话历史，维护ai_memory中的对话数据</span>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa fa-plug text-teal-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>智谱AI接口</strong>：对接智谱AI开放平台，发送用户消息并获取AI回复</span>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa fa-code text-teal-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>专用模块</strong>：zhipu_12306.py专门处理与车票查询相关的AI指令解析</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 文本转语音模块 -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-soft p-8 border border-gray-100 card-hover text-center transform transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
-                    <div class="w-20 h-20 bg-purple-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                        <i class="fa fa-volume-up text-purple-600 text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-5">文本转语音（toVoice.py）</h3>
-                    <div class="space-y-4 text-left">
-                        <div class="flex items-start">
-                            <i class="fa fa-sync-alt text-purple-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>功能实现</strong>：使用edge_tts库将文本转换为语音，生成临时MP3文件</span>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa fa-play-circle text-purple-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>语音播放</strong>：通过pygame库播放生成的音频文件，播放完成后自动删除临时文件</span>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fa fa-exclamation-triangle text-purple-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>异常处理</strong>：播放出错时尝试删除临时文件，避免资源残留</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 扩展工具模块 -->
+                <!-- 桌面工具集成 -->
                 <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-soft p-8 border border-gray-100 card-hover text-center transform transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
                     <div class="w-20 h-20 bg-orange-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
                         <i class="fa fa-tools text-orange-600 text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-5">扩展工具模块</h3>
+                    <h3 class="text-xl font-semibold mb-5">桌面工具集成</h3>
                     <div class="space-y-4 text-left">
                         <div class="flex items-start">
-                            <i class="fa fa-train text-orange-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>12306车票查询</strong>：提供get_tickets方法，查询车票信息并返回文本结果</span>
+                            <i class="fa fa-search text-orange-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600"><strong>网络搜索工具</strong>：调用Bing搜索接口获取实时信息，支持指定返回结果数量</span>
                         </div>
                         <div class="flex items-start">
                             <i class="fa fa-map-marker text-orange-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>逆地理编码</strong>：通过regeocode方法将经纬度坐标转换为具体地址</span>
+                            <span class="text-gray-600"><strong>地理编码工具</strong>：提供逆地理编码（经纬度转地址）能力，需遵循"经度,纬度"格式</span>
                         </div>
                         <div class="flex items-start">
-                            <i class="fa fa-external-link-alt text-orange-500 mt-1 mr-3"></i>
-                            <span class="text-gray-600"><strong>外部接口</strong>：依赖外部API接口实现地理信息解析等高级功能</span>
+                            <i class="fa fa-train text-orange-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600"><strong>12306票务工具</strong>：集成12306客户端能力，支持初始化会话、查询车票等</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GUI界面与交互 -->
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-soft p-8 border border-gray-100 card-hover text-center transform transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
+                    <div class="w-20 h-20 bg-purple-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fa fa-window-maximize text-purple-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-5">GUI界面与交互</h3>
+                    <div class="space-y-4 text-left">
+                        <div class="flex items-start">
+                            <i class="fa fa-desktop text-purple-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600"><strong>主界面</strong>：包含宠物形象展示区、对话输入框、功能按钮</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-cog text-purple-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600"><strong>设置窗口</strong>：通过<code>settingwindow.py</code>实现，支持配置AI Key、默认工具等</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-image text-purple-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600"><strong>资源管理</strong>：<code>background/</code>存放背景图，<code>ico/</code>存放应用图标</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 扩展与二次开发 -->
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-soft p-8 border border-gray-100 card-hover text-center transform transition-all duration-300 hover:-translate-y-3 hover:shadow-xl">
+                    <div class="w-20 h-20 bg-green-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fa fa-code-branch text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-5">扩展与二次开发</h3>
+                    <div class="space-y-4 text-left">
+                        <div class="flex items-start">
+                            <i class="fa fa-plus-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600"><strong>新增工具</strong>：参照<code>demo/</code>目录示例，实现工具类并注册</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-palette text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600"><strong>界面定制</strong>：替换资源文件或修改<code>settingwindow.py</code>调整界面</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-exchange-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-600"><strong>AI模型切换</strong>：修改<code>zhipu.py</code>适配其他支持的AI模型</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- 产品演示 -->
+<section id="demo" class="py-20 gradient-bg-light">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block px-6 py-2 bg-primary-50 text-primary-600 rounded-full text-lg font-medium mb-6 shadow-soft">视觉展示</span>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">产品演示</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">通过图片展示DesktopPetByAi的实际运行效果和核心界面</p>
+        </div>
+        
+        <div class="max-w-6xl mx-auto">
+            <!-- 主要界面展示 -->
+            <div class="bg-white rounded-2xl shadow-medium p-8 mb-12 border border-gray-100">
+                <div class="flex flex-col md:flex-row items-start mb-8">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0">
+                        <i class="fa fa-desktop text-blue-600 text-3xl"></i>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl md:text-3xl font-semibold">主界面展示</h3>
+                        <p class="text-gray-600 mt-2">DesktopPetByAi的核心用户界面</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- 主界面 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                        <div class="h-64 bg-gradient-to-r from-blue-100 to-purple-100 relative overflow-hidden">
+                            <img src="聊天.png" alt="Desktop Pet Demo" class="w-full h-full object-fill absolute inset-0">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold mb-2">主界面</h4>
+                            <p class="text-sm text-gray-600">桌面宠物主界面，包含宠物形象展示、对话历史和输入区域</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 设置界面 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                        <div class="h-64 bg-gradient-to-r from-purple-100 to-pink-100 relative overflow-hidden">
+                            <img src="设置.png" alt="Settings Demo" class="w-full h-full object-fill absolute inset-0">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold mb-2">设置界面</h4>
+                            <p class="text-sm text-gray-600">配置AI密钥、管理工具、个性化设置等功能的设置窗口</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 功能演示 -->
+            <div class="bg-white rounded-2xl shadow-medium p-8 mb-12 border border-gray-100">
+                <div class="flex flex-col md:flex-row items-start mb-8">
+                    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0">
+                        <i class="fa fa-play-circle text-green-600 text-3xl"></i>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl md:text-3xl font-semibold">功能演示</h3>
+                        <p class="text-gray-600 mt-2">核心功能的实际使用场景展示</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- AI对话 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-white rounded-xl p-6 border border-blue-100 transform transition-all duration-300 hover:-translate-y-3 hover:shadow-lg">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fa fa-comments text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-3 text-center">AI对话功能</h4>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded-lg p-3 border border-gray-200">
+                                <div class="text-xs text-gray-500 mb-1">用户:</div>
+                                <div class="text-sm">今天北京天气怎么样？</div>
+                            </div>
+                            <div class="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                                <div class="text-xs text-blue-500 mb-1">助手:</div>
+                                <div class="text-sm">正在为您查询北京天气...</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4 text-center">自然语言交互，智能问答</p>
+                    </div>
+                    
+                    <!-- 工具调用 -->
+                    <div class="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 border border-green-100 transform transition-all duration-300 hover:-translate-y-3 hover:shadow-lg">
+                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fa fa-search text-green-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-3 text-center">工具调用</h4>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded-lg p-3 border border-gray-200">
+                                <div class="text-xs text-gray-500 mb-1">用户:</div>
+                                <div class="text-sm">搜索Python最新特性</div>
+                            </div>
+                            <div class="bg-green-50 rounded-lg p-3 border border-green-100">
+                                <div class="text-xs text-green-500 mb-1">助手:</div>
+                                <div class="text-sm">正在使用Bing搜索...</div>
+                                <div class="text-xs mt-1 text-gray-600">找到3个相关结果</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4 text-center">集成搜索、编码、票务等工具</p>
+                    </div>
+                    
+                    <!-- 记忆系统 -->
+                    <div class="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 border border-purple-100 transform transition-all duration-300 hover:-translate-y-3 hover:shadow-lg">
+                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                            <i class="fa fa-history text-purple-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-3 text-center">记忆系统</h4>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded-lg p-3 border border-gray-200">
+                                <div class="text-xs text-gray-500 mb-1">用户:</div>
+                                <div class="text-sm">我昨天问的AI发展趋势</div>
+                            </div>
+                            <div class="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                                <div class="text-xs text-purple-500 mb-1">助手:</div>
+                                <div class="text-sm">根据昨天的对话，您关注的是2024年AI在医疗领域的应用趋势...</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4 text-center">上下文记忆，持续对话</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 系统集成 -->
+            <div class="bg-white rounded-2xl shadow-medium p-8 border border-gray-100">
+                <div class="flex flex-col md:flex-row items-start mb-8">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0">
+                        <i class="fa fa-plug text-orange-600 text-3xl"></i>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl md:text-3xl font-semibold">系统集成</h3>
+                        <p class="text-gray-600 mt-2">与操作系统的无缝集成体验</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- 系统托盘 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                        <div class="h-64 bg-gradient-to-r from-gray-100 to-gray-200 relative overflow-hidden">
+                            <img src="托盘.png" alt="System Tray Demo" class="w-full h-full object-fill absolute inset-0">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold mb-2">系统托盘集成</h4>
+                            <p class="text-sm text-gray-600">最小化到系统托盘，右键菜单快速访问功能</p>
+                            <ul class="text-xs text-gray-600 mt-2 space-y-1">
+                                <li class="flex items-center">
+                                    <i class="fa fa-caret-right text-orange-500 mr-2 text-xs"></i>
+                                    <span>显示/隐藏主窗口</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-caret-right text-orange-500 mr-2 text-xs"></i>
+                                    <span>打开设置</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa fa-caret-right text-orange-500 mr-2 text-xs"></i>
+                                    <span>退出程序</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 宠物动画 -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                        <div class="h-64 bg-gradient-to-r from-pink-100 to-yellow-100 relative overflow-hidden">
+                            <img src="宠物.gif" alt="Pet Animation Demo" class="w-full h-full object-fill absolute inset-0">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold mb-2">宠物动画效果</h4>
+                            <p class="text-sm text-gray-600">丰富的动画效果和交互反馈，提升用户体验</p>
+                            <div class="flex flex-wrap gap-2 mt-3">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">呼吸效果</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">浮动动画</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">交互反馈</span>
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">表情变化</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 演示说明 -->
+                <div class="mt-8 bg-gradient-to-r from-blue-50 to-white border border-blue-100 rounded-xl p-6">
+                    <div class="flex items-start">
+                        <i class="fa fa-info-circle text-blue-500 text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-blue-700">演示说明</h4>
+                            <p class="text-gray-700 text-sm">以上展示基于DesktopPetByAi的实际功能界面设计，实际界面可能根据版本更新有所调整。项目采用模块化设计，支持界面定制和功能扩展，用户可根据需求调整宠物形象、界面布局和功能模块。</p>
+                            <div class="flex flex-wrap gap-4 mt-4">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                                    <span class="text-xs text-gray-600">已完成功能</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                                    <span class="text-xs text-gray-600">计划中功能</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                                    <span class="text-xs text-gray-600">可扩展功能</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- 安装指南 -->
     <section id="installation" class="py-20 gradient-bg-light">
@@ -809,24 +818,24 @@
                             <div class="flex items-start pb-6 border-b border-gray-100 last:border-0 last:pb-0">
                                 <div class="flex-shrink-0 w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mr-4 mt-1 text-lg font-bold">1</div>
                                 <div class="flex-grow">
-                                    <p class="font-medium text-lg mb-2">下载安装包</p>
-                                    <p class="text-gray-600">直接下载已构建的EXE安装文件，访问 <a href="install.html" class="text-primary-500 hover:underline font-medium">安装页面</a> 获取下载链接。</p>
+                                    <p class="font-medium text-lg mb-2">获取AI Key</p>
+                                    <p class="text-gray-600"><a href="https://open.bigmodel.cn/console/modelcenter/square " target="_blank" class="text-primary-500 hover:underline font-medium">注册智谱AI开放平台账号</a>，创建应用并获取API Key</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start pb-6 border-b border-gray-100 last:border-0 last:pb-0">
                                 <div class="flex-shrink-0 w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mr-4 mt-1 text-lg font-bold">2</div>
                                 <div class="flex-grow">
-                                    <p class="font-medium text-lg mb-2">运行安装程序</p>
-                                    <p class="text-gray-600">双击下载的EXE文件，按照安装向导提示完成安装过程。</p>
+                                    <p class="font-medium text-lg mb-2">下载安装包</p>
+                                    <p class="text-gray-600">直接下载已构建的EXE安装文件，访问 <a href="install.html" class="text-primary-500 hover:underline font-medium">安装页面</a> 获取下载链接</p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
                                 <div class="flex-shrink-0 w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mr-4 mt-1 text-lg font-bold">3</div>
                                 <div class="flex-grow">
-                                    <p class="font-medium text-lg mb-2">启动应用</p>
-                                    <p class="text-gray-600">安装完成后，可以在桌面或开始菜单找到应用快捷方式，启动后通过系统托盘配置AI密钥等信息。</p>
+                                    <p class="font-medium text-lg mb-2">配置与使用</p>
+                                    <p class="text-gray-600">启动程序后通过系统托盘打开设置窗口，配置AI Key并重启生效</p>
                                 </div>
                             </div>
                         </div>
@@ -871,6 +880,48 @@
                     </div>
                 </div>
                 
+                <!-- 使用流程 -->
+                <div class="bg-white rounded-2xl shadow-medium p-8 transform transition-all duration-300 hover:shadow-xl mb-16">
+                    <h3 class="text-2xl font-semibold mb-8 flex items-center text-center w-full">
+                        <i class="fa fa-list-ol text-primary-600 mr-3 text-2xl"></i>
+                        完整使用流程
+                    </h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center mr-4 mt-1 text-lg font-bold">1</div>
+                            <div class="flex-grow">
+                                <p class="font-medium text-lg mb-2">环境准备</p>
+                                <p class="text-gray-600">安装Python环境及项目所需第三方库（具体见<code>requirements.txt</code>）</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center mr-4 mt-1 text-lg font-bold">2</div>
+                            <div class="flex-grow">
+                                <p class="font-medium text-lg mb-2">配置步骤</p>
+                                <p class="text-gray-600">启动程序后通过系统托盘打开"设置"窗口，在"AI配置"标签页粘贴AI Key并保存重启</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center mr-4 mt-1 text-lg font-bold">3</div>
+                            <div class="flex-grow">
+                                <p class="font-medium text-lg mb-2">日常使用</p>
+                                <p class="text-gray-600">直接在输入框输入文本与宠物对话，或通过特定指令（如"搜索今天天气"）触发工具</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center mr-4 mt-1 text-lg font-bold">4</div>
+                            <div class="flex-grow">
+                                <p class="font-medium text-lg mb-2">记忆管理</p>
+                                <p class="text-gray-600">如需清除对话历史，删除<code>ai_memory/</code>下的JSON文件即可</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- 技术栈 -->
                 <div class="bg-white rounded-2xl shadow-medium p-8 transform transition-all duration-300 hover:shadow-xl">
                     <h3 class="text-2xl font-semibold mb-8 flex items-center text-center w-full">
@@ -882,7 +933,7 @@
                         <div class="bg-blue-50 p-6 rounded-xl text-center border border-blue-100 hover:shadow-md transition-shadow duration-300 h-full">
                             <i class="fa fa-window-restore text-blue-500 text-3xl mb-4"></i>
                             <p class="font-medium">GUI框架</p>
-                            <p class="text-sm text-gray-500 mt-2">Qt（PyQt/PySide）</p>
+                            <p class="text-sm text-gray-500 mt-2">Qt（PyQt6）</p>
                         </div>
                         <div class="bg-green-50 p-6 rounded-xl text-center border border-green-100 hover:shadow-md transition-shadow duration-300 h-full">
                             <i class="fa fa-robot text-green-500 text-3xl mb-4"></i>
@@ -890,9 +941,9 @@
                             <p class="text-sm text-gray-500 mt-2">智谱AI API</p>
                         </div>
                         <div class="bg-purple-50 p-6 rounded-xl text-center border border-purple-100 hover:shadow-md transition-shadow duration-300 h-full">
-                            <i class="fa fa-microphone text-purple-500 text-3xl mb-4"></i>
-                            <p class="font-medium">语音处理</p>
-                            <p class="text-sm text-gray-500 mt-2">edge_tts + pygame</p>
+                            <i class="fa fa-cogs text-purple-500 text-3xl mb-4"></i>
+                            <p class="font-medium">工具集成</p>
+                            <p class="text-sm text-gray-500 mt-2">网络搜索/地理编码</p>
                         </div>
                         <div class="bg-orange-50 p-6 rounded-xl text-center border border-orange-100 hover:shadow-md transition-shadow duration-300 h-full">
                             <i class="fa fa-database text-orange-500 text-3xl mb-4"></i>
@@ -902,7 +953,7 @@
                     </div>
                     
                     <div class="mt-8 text-gray-600 text-center max-w-3xl mx-auto">
-                        <p class="text-lg">通过以上模块的协同，DesktopPetByAi实现了一个集对话交互、语音反馈、工具辅助于一体的智能桌面宠物，具备较好的可扩展性和用户体验。</p>
+                        <p class="text-lg">通过以上模块的协同，DesktopPetByAi实现了一个集AI对话、实用工具、个性化桌面于一体的智能桌面助手，具备较好的可扩展性和用户体验。</p>
                     </div>
                 </div>
             </div>
@@ -1085,7 +1136,7 @@
             <div class="border-t border-gray-800 pt-8 mt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="text-gray-400 text-sm mb-6 md:mb-0 text-center md:text-left">
-                        <p>&copy; 2023 DesktopPetByAi. 基于 MIT 许可证开源。</p>
+                        <p>&copy; 2025 DesktopPetByAi. 基于<a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" class="text-primary-400 hover:text-primary-300 transition-colors"> Apache 许可证</a>开源。</p>
                         <p class="mt-2">开发者：<a href="https://github.com/cjz-wr" class="text-primary-400 hover:text-primary-300 transition-colors" target="_blank">cjz-wr</a></p>
                     </div>
                     
@@ -1093,6 +1144,7 @@
                         <a href="#overview" class="text-gray-400 hover:text-white transition-colors duration-300">项目概述</a>
                         <a href="#structure" class="text-gray-400 hover:text-white transition-colors duration-300">文件结构</a>
                         <a href="#features" class="text-gray-400 hover:text-white transition-colors duration-300">功能模块</a>
+                        <a href="#demo" class="text-gray-400 hover:text-white transition-colors duration-300">产品演示</a>
                         <a href="#installation" class="text-gray-400 hover:text-white transition-colors duration-300">安装指南</a>
                         <a href="#contribute" class="text-gray-400 hover:text-white transition-colors duration-300">贡献指南</a>
                     </div>
@@ -1101,141 +1153,7 @@
         </div>
     </footer>
 
-    <script>
-        // 移动端菜单切换
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // 点击外部关闭移动端菜单
-        document.addEventListener('click', (event) => {
-            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-        
-        // 回到顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.remove('hidden');
-            } else {
-                backToTopButton.classList.add('hidden');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // 导航栏滚动效果
-        const header = document.querySelector('header');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-medium');
-                header.classList.remove('shadow-soft');
-            } else {
-                header.classList.add('shadow-soft');
-                header.classList.remove('shadow-medium');
-            }
-        });
-        
-        // 滚动动画
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                }
-            });
-        }, observerOptions);
-        
-        // 观察所有需要动画的元素
-        document.querySelectorAll('.staggered-animation > *').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // 页面加载时添加动画类
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.animate-on-load').forEach(el => {
-                el.classList.add('animate-fade-in');
-            });
-        });
-        
-        // 平滑滚动锚点链接
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // 关闭移动端菜单
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-        
-        // 微信赞赏弹窗功能
-        const wechatButton = document.getElementById('wechatButton');
-        const wechatModal = document.getElementById('wechatModal');
-        const closeModal = document.getElementById('closeModal');
-        
-        // 打开弹窗
-        wechatButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            wechatModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // 防止背景滚动
-        });
-        
-        // 关闭弹窗 - 点击关闭按钮
-        closeModal.addEventListener('click', () => {
-            wechatModal.classList.add('hidden');
-            document.body.style.overflow = ''; // 恢复背景滚动
-        });
-        
-        // 关闭弹窗 - 点击弹窗外部区域
-        wechatModal.addEventListener('click', (e) => {
-            if (e.target === wechatModal) {
-                wechatModal.classList.add('hidden');
-                document.body.style.overflow = ''; // 恢复背景滚动
-            }
-        });
-        
-        // 关闭弹窗 - 按ESC键
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !wechatModal.classList.contains('hidden')) {
-                wechatModal.classList.add('hidden');
-                document.body.style.overflow = ''; // 恢复背景滚动
-            }
-        });
-        
-        // 页面加载时的欢迎消息
-        window.addEventListener('load', () => {
-            console.log('%c🚀 DesktopPetByAi 智能桌面宠物助手', 'font-size: 18px; font-weight: bold; color: #4CAF50;');
-            console.log('%c项目地址: https://github.com/cjz-wr/DesktopPetByAi', 'color: #666;');
-            console.log('%c项目状态: 测试版 - 功能可扩展性较强', 'color: #666;');
-            console.log('%c感谢您对开源项目的支持！', 'color: #666;');
-        });
-    </script>
+    <!-- 外部JavaScript文件 -->
+    <script src="script.js"></script>
 </body>
 </html>

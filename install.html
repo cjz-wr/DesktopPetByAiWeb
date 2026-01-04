@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DesktopPetByAi - 安装包下载</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 外部CSS文件 -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 外部库 -->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -18,7 +25,7 @@
                             200: '#bae4ba',
                             300: '#8cd08c',
                             400: '#5ab35a',
-                            500: '#4CAF50', // 主色
+                            500: '#4CAF50',
                             600: '#3d9c41',
                             700: '#338336',
                             800: '#2d682f',
@@ -88,194 +95,6 @@
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer base {
-            html {
-                scroll-behavior: smooth;
-                scroll-padding-top: 80px;
-            }
-            
-            body {
-                background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-                overflow-x: hidden;
-            }
-            
-            ::selection {
-                background-color: rgba(76, 175, 80, 0.3);
-                color: #1f2937;
-            }
-        }
-        
-        @layer utilities {
-            .text-shadow {
-                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            }
-            
-            .text-gradient {
-                background: linear-gradient(90deg, #4CAF50, #1a73e8);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            
-            .glass-effect {
-                background: rgba(255, 255, 255, 0.7);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-            
-            .card-hover {
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-            
-            .card-hover:hover {
-                transform: translateY(-10px) scale(1.02);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            }
-            
-            .gradient-bg {
-                background: linear-gradient(135deg, #4CAF50 0%, #1a73e8 50%, #ea4335 100%);
-                background-size: 200% 200%;
-                animation: gradientX 15s ease infinite;
-            }
-            
-            .gradient-bg-light {
-                background: linear-gradient(135deg, #f0f9f0 0%, #eff6ff 50%, #fef2f2 100%);
-            }
-            
-            .section-divider {
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.3), transparent);
-                margin: 4rem auto;
-                max-width: 800px;
-            }
-            
-            .feature-icon {
-                position: relative;
-                z-index: 1;
-            }
-            
-            .feature-icon::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 70px;
-                height: 70px;
-                background: rgba(76, 175, 80, 0.1);
-                border-radius: 50%;
-                z-index: -1;
-            }
-            
-            .staggered-animation > * {
-                opacity: 0;
-                animation: fadeIn 0.8s ease-out forwards;
-            }
-            
-            .staggered-animation > *:nth-child(1) { animation-delay: 0.1s; }
-            .staggered-animation > *:nth-child(2) { animation-delay: 0.2s; }
-            .staggered-animation > *:nth-child(3) { animation-delay: 0.3s; }
-            .staggered-animation > *:nth-child(4) { animation-delay: 0.4s; }
-            .staggered-animation > *:nth-child(5) { animation-delay: 0.5s; }
-            .staggered-animation > *:nth-child(6) { animation-delay: 0.6s; }
-            
-            .scroll-indicator {
-                width: 30px;
-                height: 50px;
-                border: 2px solid rgba(255, 255, 255, 0.7);
-                border-radius: 25px;
-                position: relative;
-                margin: 0 auto;
-            }
-            
-            .scroll-indicator::after {
-                content: '';
-                position: absolute;
-                top: 10px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 4px;
-                height: 10px;
-                background-color: rgba(255, 255, 255, 0.7);
-                border-radius: 2px;
-                animation: scrollAnimation 2s infinite;
-            }
-            
-            @keyframes scrollAnimation {
-                0% { top: 10px; opacity: 1; }
-                100% { top: 30px; opacity: 0; }
-            }
-            
-            .typewriter {
-                overflow: hidden;
-                border-right: 2px solid #4CAF50;
-                white-space: nowrap;
-                margin: 0 auto;
-                animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-            }
-            
-            @keyframes typing {
-                from { width: 0 }
-                to { width: 100% }
-            }
-            
-            @keyframes blink-caret {
-                from, to { border-color: transparent }
-                50% { border-color: #4CAF50; }
-            }
-            
-            .chat-bubble {
-                position: relative;
-                background: #f1f5f9;
-                border-radius: 1rem;
-                padding: 1rem;
-                max-width: 80%;
-                margin: 1rem 0;
-            }
-            
-            .chat-bubble::after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 20px;
-                border-width: 10px 10px 0;
-                border-style: solid;
-                border-color: #f1f5f9 transparent;
-            }
-            
-            .directory-tree {
-                font-family: 'Courier New', monospace;
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-            
-            .directory-item {
-                padding-left: 1.5rem;
-                position: relative;
-            }
-            
-            .directory-item::before {
-                content: '├── ';
-                position: absolute;
-                left: 0;
-                color: #6b7280;
-            }
-            
-            .directory-item:last-child::before {
-                content: '└── ';
-            }
-            
-            .file-badge {
-                display: inline-block;
-                padding: 0.15rem 0.5rem;
-                border-radius: 0.25rem;
-                font-size: 0.75rem;
-                font-weight: 600;
-                margin-left: 0.5rem;
-            }
-        }
-    </style>
 </head>
 <body class="text-dark font-sans">
     <!-- 导航栏 -->
@@ -452,7 +271,7 @@
                                                 <span>适合旧系统环境</span>
                                             </li>
                                         </ul>
-                                        <a href="https://github.com/cjz-wr/DesktopPetByAi/releases/download/2.0/DesktopPetByAi.exe" class="inline-block bg-secondary-500 hover:bg-secondary-600 text-white px-7 py-3 rounded-lg font-medium transition-all duration-300 text-lg">
+                                        <a href="https://github.com/cjz-wr/DesktopPetByAi/releases/download/1.0/DesktopPetByAi.7z" class="inline-block bg-secondary-500 hover:bg-secondary-600 text-white px-7 py-3 rounded-lg font-medium transition-all duration-300 text-lg">
                                             <i class="fa fa-download mr-2"></i> 下载
                                         </a>
                                     </div>
@@ -717,100 +536,10 @@
         </div>
     </footer>
 
+    <!-- 外部JavaScript文件 -->
+    <script src="script.js"></script>
+    <!-- 添加页面特定的脚本 -->
     <script>
-        // 移动端菜单切换
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // 点击外部关闭移动端菜单
-        document.addEventListener('click', (event) => {
-            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-        
-        // 回到顶部按钮
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.remove('hidden');
-            } else {
-                backToTopButton.classList.add('hidden');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // 导航栏滚动效果
-        const header = document.querySelector('header');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-medium');
-                header.classList.remove('shadow-soft');
-            } else {
-                header.classList.add('shadow-soft');
-                header.classList.remove('shadow-medium');
-            }
-        });
-        
-        // 滚动动画
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                }
-            });
-        }, observerOptions);
-        
-        // 观察所有需要动画的元素
-        document.querySelectorAll('.staggered-animation > *').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // 页面加载时添加动画类
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.animate-on-load').forEach(el => {
-                el.classList.add('animate-fade-in');
-            });
-        });
-        
-        // 平滑滚动锚点链接
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // 关闭移动端菜单
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-        
         // 页面加载时的欢迎消息
         window.addEventListener('load', () => {
             console.log('%c🚀 DesktopPetByAi 安装包下载页面', 'font-size: 18px; font-weight: bold; color: #4CAF50;');
