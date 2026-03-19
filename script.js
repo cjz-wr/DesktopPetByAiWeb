@@ -19,6 +19,96 @@ if (mobileMenuButton && mobileMenu) {
     });
 }
 
+// 添加背景音乐控制功能
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('background-music');
+    
+    // 创建音乐控制按钮
+    const musicControl = document.createElement('div');
+    musicControl.id = 'music-control';
+    musicControl.style.position = 'fixed';
+    musicControl.style.top = '80px';  // 修改为右上角位置
+    musicControl.style.right = '20px';
+    musicControl.style.zIndex = '9999';
+    musicControl.style.background = '#fff';
+    musicControl.style.borderRadius = '50%';
+    musicControl.style.width = '50px';
+    musicControl.style.height = '50px';
+    musicControl.style.display = 'flex';
+    musicControl.style.alignItems = 'center';
+    musicControl.style.justifyContent = 'center';
+    musicControl.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    musicControl.style.cursor = 'pointer';
+    musicControl.style.border = '1px solid #eee';
+    musicControl.style.transition = 'transform 0.3s ease';  // 添加过渡效果
+    
+    // 默认显示播放图标
+    musicControl.innerHTML = '<i id="music-icon" class="fa fa-music" style="font-size: 20px; color: #4CAF50;"></i>';
+    
+    document.body.appendChild(musicControl);
+    
+    // 保存原始状态
+    let isPlaying = false;
+    
+    // 点击音乐控制按钮切换播放/暂停
+    musicControl.addEventListener('click', function() {
+        const musicIcon = document.getElementById('music-icon');
+        
+        if (!isPlaying) {
+            // 如果当前没有播放，则尝试播放
+            audio.play()
+                .then(() => {
+                    console.log('背景音乐开始播放');
+                    isPlaying = true;
+                    musicIcon.className = 'fa fa-music rotating-music'; // 应用旋转类
+                    // 添加旋转动画到CSS
+                    addRotationAnimation();
+                })
+                .catch(e => {
+                    console.error('播放背景音乐失败:', e);
+                    isPlaying = false;
+                });
+        } else {
+            // 如果当前正在播放，则暂停
+            audio.pause();
+            isPlaying = false;
+            musicIcon.className = 'fa fa-music'; // 暂停时移除旋转类
+        }
+    });
+    
+    // 当音频结束时自动重新开始（确保循环播放）
+    audio.addEventListener('ended', function() {
+        audio.currentTime = 0;
+        // 如果之前是播放状态，继续播放
+        if (isPlaying) {
+            audio.play();
+        }
+    });
+    
+    // 添加旋转动画的CSS
+    function addRotationAnimation() {
+        if (!document.querySelector('#rotating-music-style')) {
+            const style = document.createElement('style');
+            style.id = 'rotating-music-style';
+            style.textContent = `
+                @keyframes rotate {
+                    from {
+                        transform: rotate(0deg);
+                    }
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+                
+                .rotating-music {
+                    animation: rotate 3s linear infinite;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+});
+
 // 回到顶部按钮
 const backToTopButton = document.getElementById('back-to-top');
 
@@ -238,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (video.muted) {
                 icon.className = 'fa fa-volume-mute text-lg';
             } else {
-                icon.className = 'fa fa-volume-up text-lg';
+                icon.className = 'fa fa-music text-lg';
             }
         }
         

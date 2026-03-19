@@ -98,6 +98,13 @@
     </script>
 </head>
 <body class="text-dark font-sans bg-gradient-to-b from-gray-50 to-white">
+
+    <!-- 背景音乐播放器 -->
+    <audio id="background-music" loop preload="auto" style="display: none;">
+        <source src="2.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放功能。
+    </audio>
+
     <!-- 导航栏 -->
     <header class="glass-effect sticky top-0 z-50 shadow-soft transition-all duration-300 backdrop-blur-md bg-white/90">
         <div class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
@@ -236,10 +243,10 @@
                                     </div>
                                     <div class="flex-grow">
                                         <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                                            <h4 class="font-semibold text-xl">版本 2.1.5 (正式版)</h4>
+                                            <h4 class="font-semibold text-xl">版本 2.1.7 (发行版)</h4>
                                             <span class="bg-primary-500 text-white px-4 py-1 rounded-full text-sm mt-2 md:mt-0">推荐</span>
                                         </div>
-                                        <p class="text-gray-600 mb-4">DesktopPetByAi2.1.5.exe | 大小: ~100MB</p>
+                                        <p class="text-gray-600 mb-4">DesktopPetByAi2.1.7.exe | 大小: ~200MB</p>
                                         <ul class="text-gray-600 mb-5 space-y-2">
                                             <li class="flex items-start">
                                                 <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
@@ -251,14 +258,14 @@
                                             </li>
                                             <li class="flex items-start">
                                                 <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
-                                                <span>支持智谱AI及OpenAI API</span>
+                                                <span>新增许多特性</span>
                                             </li>
                                             <li class="flex items-start">
                                                 <i class="fa fa-check text-green-500 mt-1 mr-3"></i>
-                                                <span>支持本地大模型接入</span>
+                                                <span>支持插件接入</span>
                                             </li>
                                         </ul>
-                                        <a href="https://github.com/cjz-wr/DesktopPetByAi/releases/download/2.1.5/DesktopPetByAi2.1.5.exe" class="inline-block bg-primary-500 hover:bg-primary-600 text-white px-7 py-3 rounded-lg font-medium transition-all duration-300 text-lg">
+                                        <a href="https://github.com/cjz-wr/DesktopPetByAi/releases/download/2.1.7/DesktopPetByAi-2.1.7.exe" class="inline-block bg-primary-500 hover:bg-primary-600 text-white px-7 py-3 rounded-lg font-medium transition-all duration-300 text-lg">
                                             <i class="fa fa-download mr-2"></i> 立即下载
                                         </a>
                                     </div>
@@ -270,10 +277,10 @@
                                     </div>
                                     <div class="flex-grow">
                                         <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                                            <h4 class="font-semibold text-xl">版本 2.0 (内测版)</h4>
+                                            <h4 class="font-semibold text-xl">版本 2.1.5 (稳定版)</h4>
                                             <span class="bg-secondary-500 text-white px-4 py-1 rounded-full text-sm mt-2 md:mt-0">稳定</span>
                                         </div>
-                                        <p class="text-gray-600 mb-4">DesktopPetByAi2.0.exe | 大小: 98MB</p>
+                                        <p class="text-gray-600 mb-4">DesktopPetByAi2.0.exe | 大小: ~100MB</p>
                                         <ul class="text-gray-600 mb-5 space-y-2">
                                             <li class="flex items-start">
                                                 <i class="fa fa-check text-blue-500 mt-1 mr-3"></i>
@@ -288,7 +295,7 @@
                                                 <span>新增MCP功能和AI增强</span>
                                             </li>
                                         </ul>
-                                        <a href="https://github.com/cjz-wr/DesktopPetByAi/releases/download/2.0/DesktopPetByAi2.0.exe" class="inline-block bg-secondary-500 hover:bg-secondary-600 text-white px-7 py-3 rounded-lg font-medium transition-all duration-300 text-lg">
+                                        <a href="https://github.com/cjz-wr/DesktopPetByAi/releases/download/2.1.5/DesktopPetByAi2.1.5.exe" class="inline-block bg-secondary-500 hover:bg-secondary-600 text-white px-7 py-3 rounded-lg font-medium transition-all duration-300 text-lg">
                                             <i class="fa fa-download mr-2"></i> 下载
                                         </a>
                                     </div>
@@ -320,12 +327,12 @@
                             <div>
                                 <h4 class="text-xl font-semibold text-primary-600 mb-4">如何选择版本？</h4>
                                 <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-6">
-                                    <p class="text-blue-800 font-medium text-lg mb-3">推荐使用最新版本 (2.1.5)</p>
-                                    <p class="text-blue-700">如果您希望获得最新功能和改进，建议下载最新版本。2.1.5版本包含更多AI交互功能、改进的性能和用户体验，支持多种AI模型接口。</p>
+                                    <p class="text-blue-800 font-medium text-lg mb-3">推荐使用最新版本 (2.1.7)</p>
+                                    <p class="text-blue-700">如果您希望获得最新功能和改进，建议下载最新版本。2.1.7版本新增了许多特性</p>
                                 </div>
                                 
                                 <div class="bg-green-50 border border-green-100 rounded-xl p-6">
-                                    <p class="text-green-800 font-medium text-lg mb-3">选择稳定版本 (2.0)</p>
+                                    <p class="text-green-800 font-medium text-lg mb-3">选择稳定版本 (2.1.5)</p>
                                     <p class="text-green-700">如果您需要一个相对稳定的版本，那么就选择稳定版本(如果你有内测密钥的前提下)</p>
                                 </div>
                             </div>
@@ -334,10 +341,18 @@
                                 <h4 class="text-xl font-semibold text-primary-600 mb-4">版本历史</h4>
                                 <div class="space-y-5 max-h-96 overflow-y-auto pr-2">
                                     <div class="border-l-4 border-primary-500 pl-5 py-2 bg-white/50 p-4 rounded-r-lg">
+                                        <p class="font-medium text-lg">版本 2.1.7</p>
+                                        <p class="text-gray-600">发行版，对于新增许多特性的发行版，但仍可能存在一些问题</p>
+                                    </div>
+                                    <div class="border-l-4 border-primary-500 pl-5 py-2 bg-white/50 p-4 rounded-r-lg">
+                                        <p class="font-medium text-lg">版本 2.1.6</p>
+                                        <p class="text-gray-600">对新功能的测试版</p>
+                                    </div>
+                                    <div class="border-l-4 border-secondary-500 pl-5 py-2 bg-white/50 p-4 rounded-r-lg">
                                         <p class="font-medium text-lg">版本 2.1.5</p>
                                         <p class="text-gray-600">正式版，支持多种AI模型,支持本地部署</p>
                                     </div>
-                                    <div class="border-l-4 border-secondary-500 pl-5 py-2 bg-white/50 p-4 rounded-r-lg">
+                                    <div class="border-l-4 border-gray-500 pl-5 py-2 bg-white/50 p-4 rounded-r-lg">
                                         <p class="font-medium text-lg">版本 2.0</p>
                                         <p class="text-gray-600">改进AI交互</p>
                                     </div>
@@ -359,7 +374,7 @@
                             <ul class="text-gray-700 space-y-3">
                                 <li class="flex items-start">
                                     <i class="fa fa-caret-right text-blue-500 mt-2 mr-3"></i>
-                                    <span>安装包大小约100MB，请确保网络连接稳定</span>
+                                    <span>安装包大小约200MB，请确保网络连接稳定</span>
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa fa-caret-right text-blue-500 mt-2 mr-3"></i>
